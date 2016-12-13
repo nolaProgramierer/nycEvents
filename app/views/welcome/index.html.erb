@@ -9,3 +9,16 @@
       <%= radio_button_tag :event_type, "Classical" %>Classical<br>
         <%= submit_tag "Input selection", id: "submit-btn" %>
     <% end %>
+    <div id="event-box">
+      <dl>
+        <% @results.each do |listing| %>
+          <dt><%= listing['event_name']%></dt>
+            <dd><%= listing['venue_name'] %></dd>
+            <dd><%= listing['street_address'] %></dd>
+            <dd><%= listing['date_time_description'] %></dd>
+            <dd><%= listing['web_description'].html_safe %></dd>
+          <% end %>
+      </dl>
+    </div>
+
+    
