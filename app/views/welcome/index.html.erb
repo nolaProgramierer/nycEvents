@@ -1,2 +1,11 @@
 <h1>NYC Events</h1>
-<p><%= Time.now% ></p>
+
+  <%= form_tag(events_path, id: "events-form") do %>
+    <%= label_tag "events", "Select your desired entertainment type", id: "events-label" %>
+      <%= radio_button_tag :event_type, "Theater" %>Theater
+      <%= radio_button_tag :event_type, "Movies" %>Movies
+      <%= radio_button_tag :event_type, "Dance" %>Dance
+      <%= radio_button_tag :event_type, "Jazz" %>Jazz
+      <%= radio_button_tag :event_type, "Classical" %>Classical<br>
+        <%= submit_tag "Input selection", id: "submit-btn" %>
+    <% end %>
