@@ -1,16 +1,32 @@
-<h1>NYC Events</h1>
+  <div class="row">
+    <div class = "col-md-4 center-text" id="title">
+      <h1>NYC Cultural Events</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4" id="events-form">
 
-  <%= form_tag(events_path, id: "events-form") do %>
-    <%= label_tag "events", "Select your desired entertainment type", id: "events-label" %>
-      <%= radio_button_tag :event_type, "Theater" %>Theater
-      <%= radio_button_tag :event_type, "Movies" %>Movies
-      <%= radio_button_tag :event_type, "Dance" %>Dance
-      <%= radio_button_tag :event_type, "Jazz" %>Jazz
-      <%= radio_button_tag :event_type, "Classical" %>Classical<br>
-        <%= submit_tag "Input selection", id: "submit-btn" %>
-    <% end %>
-    <div id="event-box">
-      <dl>
+        <%= form_tag(events_path) do %>
+          <%= label_tag "events", "Select your desired entertainment type:", id: 'selection-text' %><br>
+            <%= radio_button_tag  :event_type, "Theater" %>
+              <%= label_tag       :event_type_theater, "Theater" %>
+            <%= radio_button_tag  :event_type, "Movies" %>
+              <%= label_tag       :event_type_movies, "Movies" %>
+            <%= radio_button_tag  :event_type, "Dance" %>
+              <%= label_tag       :event_type_movies, "Dance" %>
+            <%= radio_button_tag  :event_type, "Jazz" %>
+              <%= label_tag       :event_type_jazz, "Jazz" %>
+            <%= radio_button_tag  :event_type, "Classical" %>
+              <%= label_tag       :event_type_classical, "Classical" %>
+
+            <%= submit_tag "Submit selection", class: "btn btn-info btn-sm", id: "submit-btn" %>
+          <% end %>
+
+          
+  </div>
+  <div class="row">
+    <!-- <div class= "col-md-8 col-md-offset-2 pre-scrollable" id="event-box"> -->
+      <dl class= "col-md-8 col-md-offset-2 pre-scrollable" id="event-box">
         <% @results.each do |listing| %>
           <dt><%= listing['event_name']%></dt>
             <dd><%= listing['venue_name'] %></dd>
@@ -19,6 +35,5 @@
             <dd><%= listing['web_description'].html_safe %></dd>
           <% end %>
       </dl>
-    </div>
-
-    
+    <!-- </div> -->
+  </div>
