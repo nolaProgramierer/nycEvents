@@ -4,7 +4,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$default-serif: 'PT Serif', serif;
+$default-sans-serif: 'PT Sans', sans-serif;
+
 body {
+  font-family: $default-serif;
   background: image_url('nyc_event_bckgrd.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -12,24 +16,24 @@ body {
   background-size: cover;
 }
 #title {
+  font-family: $default-sans-serif;
   color: white;
   margin-bottom: 20px;
+  h1 {
+    font-size: 4em;
+    text-shadow: 2px 2px #FF0000;
+  }
 }
 dl {
   border: solid 2px orange;
   background-color: white;
   opacity: 0.8;
-}
-dt {
-  font-size: 24px;
-}
-// .radio-btn {
-//   font-size: 1.25em;
-// }
-.check_box {
-  font-size: 1.25em;
+  dt {
+    font-size: 24px;
+  }
 }
 #events-form {
+  font-family: $default-sans-serif;
   background-color: white;
   opacity: 0.8;
   border: solid 2px orange;
@@ -42,14 +46,7 @@ dt {
   margin-top: 10px;
   margin-bottom: 15px;
 }
-// change bootstrap default height
+// change bootstrap default scrollable area height
 .pre-scrollable {
   max-height: 400px !important;
-}
-.my-btn {
-  font-size: 2em;
-}
-.center {
-    float: none;
-    margin: 0 auto;
 }
