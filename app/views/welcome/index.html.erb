@@ -5,30 +5,45 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3" id="events-form">
+    <div class="col-md-6 col-md-offset-3" id="events-form">
         <%= form_tag(events_path) do %>
-        <div class="row">
-          <div class="col-xs-8 col-xs-offset-2 check_box">
+
+        <div class="col-md-12 text-center">
+
           <%= label_tag "events", "Select your desired entertainment type:" %><br>
-            <%= check_box_tag  :event_type, "Theater" %>
-              <%= label_tag       :event_type_theater, "Theater" %>
-            <%= check_box_tag  :event_type, "Movies" %>
-              <%= label_tag       :event_type_movies, "Movies" %>
-            <%= check_box_tag  :event_type, "Dance" %>
-              <%= label_tag       :event_type_movies, "Dance" %>
-            <%= check_box_tag  :event_type, "Jazz" %>
-              <%= label_tag       :event_type_jazz, "Jazz" %>
-            <%= check_box_tag  :event_type, "Classical" %>
-              <%= label_tag       :event_type_classical, "Classical" %>
-            </div>
+
+          <div class="btn-group btn-group-sm" data-toggle="buttons">
+            <label class="btn btn-primary active">
+            <%= radio_button_tag   :event_type, "Theater"%>Theater
+                <%# label_tag      :event_type_theater, "Theater" %>
+            </label>
+            <label class="btn btn-primary">
+            <%= radio_button_tag   :event_type, "Movies" %>Movies
+              <%# label_tag        :event_type_movies, "Movies" %>
+            </label>
+            <label class="btn btn-primary">
+            <%= radio_button_tag   :event_type, "Dance" %>Dance
+              <%# label_tag        :event_type_movies, "Dance" %>
+            </label>
+            <label class="btn btn-primary">
+            <%= radio_button_tag   :event_type, "Jazz" %>Jazz
+              <%# label_tag        :event_type_jazz, "Jazz" %>
+            </label>
+            <label class="btn btn-primary">
+            <%= radio_button_tag   :event_type, "Classical" %>Classical
+              <%# label_tag        :event_type_classical, "Classical" %>
+            </label>
           </div>
+        </div>
+
+
           <div class="row">
-            <div class="col-xs-4 col-xs-offset-4">
+            <div class="col-md-12 text-center">
               <%= submit_tag "Submit selection", class: "btn btn-info btn-sm", id: "submit-btn" %>
             </div>
           </div>
           <% end %>
-      </div><!-- events-form-->
+      </div>
     </div><!--row-->
 
   <div class="row">
